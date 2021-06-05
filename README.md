@@ -17,3 +17,9 @@
 </p>
 
 <h2 align='center'>All code produced in videos separated into branches</h2>
+
+  
+  
+## Videos:
+  
+  - [EP01 | Debug Modal](https://github.com/ismaelsousa/drops-mobile/tree/debug-modal)
