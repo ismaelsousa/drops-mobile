@@ -1,3 +1,4 @@
+/* eslint-disable react-native/no-inline-styles */
 /**
  * Sample React Native App
  * https://github.com/facebook/react-native
@@ -10,6 +11,7 @@
 
 import React from 'react';
 import {
+  Image,
   SafeAreaView,
   ScrollView,
   StatusBar,
@@ -63,6 +65,76 @@ const App = () => {
   };
 
   return (
+    <SafeAreaView style={{flex: 1}}>
+      <View
+        style={{
+          flex: 1,
+          flexDirection: 'row',
+          justifyContent: 'flex-start',
+          // alignItems: 'flex-start',
+          backgroundColor: 'black',
+          // alignContent: 'flex-start',
+          // flexWrap: 'wrap',
+        }}>
+        <View
+          style={{
+            flexBasis: 'auto',
+            flexGrow: 1,
+            flexShrink: 1,
+            width: 100,
+            height: 100,
+            backgroundColor: 'blue',
+          }}
+        />
+        <View
+          style={{
+            flexBasis: 'auto',
+            flexGrow: 2,
+            flexShrink: 2,
+            width: 100,
+            height: 100,
+            backgroundColor: 'red',
+          }}
+        />
+
+        {[1, 2, 3].map(item => (
+          <Image
+            key={item}
+            style={{
+              height: 100,
+              width: 100,
+            }}
+            source={{
+              uri:
+                'https://sdk.bitmoji.com/render/panel/ce5f6014-4269-4ecb-993c-d4b5c73d8cbd-c86727ab-4579-4859-90c5-694820cdc65d-v1.png?transparent=1&palette=1',
+            }}
+          />
+        ))}
+      </View>
+    </SafeAreaView>
+  );
+
+  return (
+    <View style={{flex: 1}}>
+      <View
+        style={{
+          flex: 3,
+          flexDirection: 'column',
+          justifyContent: 'flex-start',
+          backgroundColor: 'red',
+        }}
+      />
+      <View style={{flex: 1, backgroundColor: 'blue'}} />
+      <View style={{flex: 1, backgroundColor: 'green'}} />
+    </View>
+  );
+  /**
+   *  3/5
+   *  1/5
+   *  1/5
+   */
+
+  return (
     <SafeAreaView style={backgroundStyle}>
       <StatusBar barStyle={isDarkMode ? 'light-content' : 'dark-content'} />
       <ScrollView
@@ -74,8 +146,11 @@ const App = () => {
             backgroundColor: isDarkMode ? Colors.black : Colors.white,
           }}>
           <Section title="Step One">
-            Edit <Text style={styles.highlight}>App.js</Text> to change this
-            screen and then come back to see your edits.
+            Edit{' '}
+            <Text style={[styles.highlight, {fontSize: 50, color: 'red'}]}>
+              App.js
+            </Text>{' '}
+            to change this screen and then come back to see your edits.
           </Section>
           <Section title="See Your Changes">
             <ReloadInstructions />
