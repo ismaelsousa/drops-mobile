@@ -8,7 +8,7 @@
  * @format
  */
 
-import React, {useEffect, useState} from 'react';
+import React from 'react';
 import {
   SafeAreaView,
   ScrollView,
@@ -17,8 +17,6 @@ import {
   Text,
   useColorScheme,
   View,
-  DevSettings,
-  Alert,
 } from 'react-native';
 
 import {
@@ -28,7 +26,6 @@ import {
   LearnMoreLinks,
   ReloadInstructions,
 } from 'react-native/Libraries/NewAppScreen';
-import Logged from './Logged';
 
 const Section: React.FC<{
   title: string;
@@ -64,16 +61,6 @@ const App = () => {
   const backgroundStyle = {
     backgroundColor: isDarkMode ? Colors.darker : Colors.lighter,
   };
-
-  const [isLogged, setIsLogged] = useState(false);
-
-  useEffect(() => {
-    DevSettings.addMenuItem('Toggle logged', () => setIsLogged(old => !old));
-  }, []);
-
-  if (isLogged) {
-    return <Logged />;
-  }
 
   return (
     <SafeAreaView style={backgroundStyle}>
